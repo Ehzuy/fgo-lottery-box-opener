@@ -9,7 +9,7 @@ ii. the other button 10 at the middle of opening the lottery
 iii. the reset prize button located at top right of the lottery screen
 iv. the reset button that ask for you to comfirm resetting the lottery
 v. the close button that will appear after you reset the lottery
-3. start running this script next to your emulator, make sure nothing is blocking your emulator, click on the launcher of this program/run page of pycharm or etc  to make sure your focus is on this site
+3. start running image_recon.py next to your emulator, make sure nothing is blocking your emulator, click on the launcher of this program/run page of pycharm or etc  to make sure your focus is on this site
 4. move mouse to top right of your emulator, press enter to register, do the same for the bottom left of the emulator.
 5. let the program run.
 
