@@ -56,6 +56,17 @@ def onUpdate(region):
     x, y, dx, dy = region
     button_10 = pyautogui.locateCenterOnScreen("button-10.png", region=(x, y, dx, dy))
     button_10_alternative = pyautogui.locateCenterOnScreen("button-10-alternative.png", region=(x, y, dx, dy))
+
+    if button_10 is not None:
+        click_and_print(button_10, "start unboxing", 1)
+        time.sleep(1.5)
+        pyautogui.leftClick(x + dx / 4, y + dy / 2)
+
+        return
+    if button_10_alternative is not None:
+        click_and_print(button_10_alternative, "opening...", 10)
+        return
+
     reset_box = pyautogui.locateCenterOnScreen("prize-reset.png", region=(x, y, dx, dy))
     reset_button = pyautogui.locateCenterOnScreen("reset-button.png", region=(x, y, dx, dy))
     close_button = pyautogui.locateCenterOnScreen("close.png", region=(x, y, dx, dy))
@@ -63,19 +74,9 @@ def onUpdate(region):
     if button_10 is None and button_10_alternative is None and reset_button is None and reset_box is None and close_button is None:
         # pyautogui.leftClick(button_10_alternative)
         print("...")
-
-        return
-    if button_10 is not None:
-        click_and_print(button_10, "start unboxing", 1)
-        time.sleep(1.5)
-        pyautogui.leftClick(x + dx / 4, y + dy / 2)
-
         return
     if reset_box is not None and button_10 is None:
         click_and_print(reset_box, "start resetting", 1)
-        return
-    if button_10_alternative is not None:
-        click_and_print(button_10_alternative, "opening...", 10)
         return
     if reset_button is not None:
         click_and_print(reset_button, "resetting", 1)
